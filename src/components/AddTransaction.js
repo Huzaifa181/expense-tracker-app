@@ -6,7 +6,12 @@ const AddTransaction = () => {
     const {addTransaction}= useContext(GlobalContext)
     const handleAddition=(e)=>{
         e.preventDefault()
-        addTransaction({description,transactionAmount})
+        if(Number(transactionAmount)===0){
+            alert("please Input Correct Number")
+            return
+        }
+        const cloneTransactionAmount=parseInt(transactionAmount)
+        addTransaction({description,cloneTransactionAmount})
     }
     return (
         <div>

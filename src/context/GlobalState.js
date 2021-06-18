@@ -21,8 +21,9 @@ export const GlobalProvider=({children})=>{
         dispatch({
             type:'ADD_TRANSACTION',
             payload:{
-                transactionAmount:transObj.transactionAmount,
-                description:transObj.description
+                id:state.transactions.length+1,
+                description:transObj.description,
+                transactionAmount:transObj.cloneTransactionAmount
             }
         })
     }

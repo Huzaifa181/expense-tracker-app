@@ -2,9 +2,9 @@ import React from 'react';
 
 const Header = () => {
     return (
-        <div>
+        <h1>
             Expense Tracker App by Huzaifa Ahmed
-        </div>
+        </h1>
     );
 }
 
