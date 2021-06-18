@@ -17,10 +17,20 @@ export const GlobalContext = createContext(initialState);
 //Create the provider for the global context
 export const GlobalProvider=({children})=>{
     const [state, dispatch]=useReducer(AppReducer, initialState)
+    function addTransaction(transObj){
+        dispatch({
+            type:'ADD_TRANSACTION',
+            payload:{
+                transactionAmount:transObj.transactionAmount,
+                description:transObj.description
+            }
+        })
+    }
     return(
         <GlobalContext.Provider value={
             {
-                transactions:state.transactions
+                transactions:state.transactions,
+                addTransaction
             }
         }>
             {children}
