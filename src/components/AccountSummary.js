@@ -5,7 +5,6 @@ const AccountSummary = () => {
     const [income, setIncome] =useState(0);
     const [expense, setExpense] =useState(0);
     useEffect(() => {
-        
         const totalIncome=transactions.reduce((total, num)=>{
             if(num.transactionAmount>0){
                 return total+parseInt(num.transactionAmount)

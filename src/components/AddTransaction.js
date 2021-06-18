@@ -12,6 +12,8 @@ const AddTransaction = () => {
         }
         const cloneTransactionAmount=parseInt(transactionAmount)
         addTransaction({description,cloneTransactionAmount})
+        setDescription('')
+        setTransactionAmount(0)
     }
     return (
         <div>
@@ -25,6 +27,7 @@ const AddTransaction = () => {
                     type="text"
                     id='description'
                     value={description}
+                    required
                     onChange={e=>setDescription(e.target.value)}
                     placeholder='Detail of transaction'/>
                 </div>
@@ -33,6 +36,7 @@ const AddTransaction = () => {
                         Transaction Amount
                     </label>
                     <input
+                    required
                     onChange={e=>setTransactionAmount(e.target.value)}
                     type="number"
                     value={transactionAmount}
